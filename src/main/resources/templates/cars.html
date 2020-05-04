@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="fonts/css/fontawesome.css" rel="stylesheet" >
+    <link href="fonts/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="outer-panel">
+    <div class="cars-panel shadow">
+        <h1>Car Manager</h1>
+
+        <button th:onclick="'javascript:rowClicked(\'/addCar\');'">Add Car</button>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Mark</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+
+            <tbody th:each="car: ${carList}">
+                    <tr class="content">
+                        <td th:text="${car.mark}" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '\');'"></td>
+                        <td th:text="${car.model}" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '\');'"></td>
+                        <td th:text="${car.color}" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '\');'"></td>
+                        <td class="delete" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '/delete\');'"><i class="fas fa-trash-alt"></i></td>
+                    </tr>
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+</div>
+
+<script th:inline="javascript">
+    function rowClicked(value) {
+        console.log(value);
+        location.href = "/cars/" + value;
+    }
+</script>
+
+</body>
+</html>

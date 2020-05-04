@@ -11,8 +11,6 @@ import pl.michalzadrozny.simplecrudapp.service.CarServiceImpl;
 import java.util.List;
 import java.util.Optional;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-
 @Slf4j
 @Controller
 @RequestMapping("/cars")
@@ -49,13 +47,17 @@ public class CarController {
 
     @PostMapping("/{id}/save")
     public String saveCar(@ModelAttribute("car") Car car) {
+        log.info("Car to save: "+car.toString());
+
         Optional<Car> oldCar = carService.findCarById(car.getId());
 
         if (oldCar.isPresent()) {
+            log.info(car.toString() + " is present on the list");
             carService.findCarById(car.getId()).get().setMark(car.getMark());
             carService.findCarById(car.getId()).get().setModel(car.getModel());
             carService.findCarById(car.getId()).get().setColor(car.getColor());
         }else{
+            log.info(car.toString() + " is not present on the list");
             carService.add(car);
         }
 

@@ -37,6 +37,7 @@ public class CarController {
         if (foundCar.isPresent()) {
 
             model.addAttribute("car", foundCar.get());
+            log.info("Car to edit: "+foundCar.get().toString());
 
             return "car-form";
         } else {
@@ -46,19 +47,16 @@ public class CarController {
     }
 
     @PostMapping("/{id}/save")
-    public String saveCar(@ModelAttribute("car") Car car) {
-        log.info("Car to save: "+car.toString());
+    public String saveCar(@PathVariable long id, String mark, String model, String color) {
 
-        Optional<Car> oldCar = carService.findCarById(car.getId());
+        Optional<Car> oldCar = carService.findCarById(id);
 
         if (oldCar.isPresent()) {
-            log.info(car.toString() + " is present on the list");
-            carService.findCarById(car.getId()).get().setMark(car.getMark());
-            carService.findCarById(car.getId()).get().setModel(car.getModel());
-            carService.findCarById(car.getId()).get().setColor(car.getColor());
+            oldCar.get().setMark(mark);
+            oldCar.get().setModel(model);
+            oldCar.get().setColor(color);
         }else{
-            log.info(car.toString() + " is not present on the list");
-            carService.add(car);
+            carService.add(new Car(mark,model,color));
         }
 
         return "redirect:/cars";

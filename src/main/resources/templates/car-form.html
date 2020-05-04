@@ -12,10 +12,10 @@
         <h1>Wprowadź dane samochodu</h1>
 
         <div class="edit-fields">
-            <form th:action="@{/cars/{id}/save(id=${car.getId()})}" method="post">
-                <div class="field"><label>Marka:</label><input th:field="*{car.mark}"></div>
-                <div class="field"><label>Model:</label><input th:field="*{car.model}"></div>
-                <div class="field"><label>Kolor:</label><input th:field="*{car.color}"></div>
+            <form th:action="@{/cars/{id}/save(id=${car.getId()})}" th:object="${car}" method="post">
+                <div class="field"><label>Marka:</label><input th:field="*{mark}"></div>
+                <div class="field"><label>Model:</label><input th:field="*{model}"></div>
+                <div class="field"><label>Kolor:</label><input th:field="*{color}"></div>
                 <input class="btn" type="submit" value="Zapisz">
             </form>
         </div>

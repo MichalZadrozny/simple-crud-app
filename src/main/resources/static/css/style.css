@@ -86,9 +86,19 @@ body {
     padding: 3rem;
 }
 
+.inner-edit-panel .info{
+    font-size: 2.2rem;
+    padding: 0;
+
+}
+
 .inner-edit-panel label {
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+.inner-edit-panel .name{
+    font-weight: bold;
 }
 
 .inner-edit-panel h1 {
@@ -105,6 +115,8 @@ body {
     justify-content: space-around;
     padding-top: 3rem;
 }
+
+
 
 @media only (max-device-width: 600px) {
     .inner-edit-panel {
@@ -179,8 +191,12 @@ body {
     background-color: rgba(255, 255, 255, .08);
     cursor: pointer;
 }
-.cars-panel i:hover{
+.cars-panel .delete i:hover{
     color: rgba(241, 25, 25, 0.79) !important;
+}
+
+.cars-panel .edit i:hover{
+    color: rgba(176, 241, 58, 0.79) !important;
 }
 
 @media (max-width: 800px) {

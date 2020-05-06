@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <title>Car Management System</title>
+
     <link rel="favicon" th:href="@{/img/favicon.ico}"/>
     <link th:href="@{/fonts/css/fontawesome.css}" rel="stylesheet">
     <link th:href="@{/fonts/css/solid.css}" rel="stylesheet">
@@ -15,18 +17,14 @@
 
 
         <div class="edit-fields">
-            <form th:action="@{/cars/{id}/save(id=${car.getId()})}" th:object="${car}" method="post">
-                <div class="field"><label class="name">Mark:</label><input th:field="*{mark}"></div>
-                <div class="field"><label class="name">Model:</label><input th:field="*{model}"></div>
-                <div class="field"><label class="name">Color:</label><input th:field="*{color}"></div>
+            <form th:action="@{/cars/{id}/save(id=${car.getId()})}" th:object="${car}" method="get">
+                <div class="field info"><label class="name">Mark:</label><label th:text="*{mark}"/></div>
+                <div class="field info"><label class="name">Model:</label><label th:text="*{model}"/></div>
+                <div class="field info"><label class="name">Color:</label><label th:text="*{color}"/></div>
                 <div class="buttons">
 
                     <div class="btn car-form-btn" th:onclick="'javascript:goToCars();'">
                         <i class="fas fa-arrow-left"></i>
-                    </div>
-
-                    <div class="btn car-form-btn" onClick="document.querySelector('form').submit();">
-                        <p>Save</p>
                     </div>
 
                 </div>

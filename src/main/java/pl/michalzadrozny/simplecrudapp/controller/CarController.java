@@ -37,6 +37,21 @@ public class CarController {
         if (foundCar.isPresent()) {
 
             model.addAttribute("car", foundCar.get());
+
+            return "car-info";
+        } else {
+            return "not-found";
+        }
+
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editCar(@PathVariable long id, Model model) {
+        Optional<Car> foundCar = carService.findCarById(id);
+
+        if (foundCar.isPresent()) {
+
+            model.addAttribute("car", foundCar.get());
             log.info("Car to edit: "+foundCar.get().toString());
 
             return "car-form";

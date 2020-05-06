@@ -2,19 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Car Management System</title>
 
-    <link href="fonts/css/fontawesome.css" rel="stylesheet" >
-    <link href="fonts/css/solid.css" rel="stylesheet">
+    <link th:href="@{/fonts/css/fontawesome.css}" rel="stylesheet">
+    <link th:href="@{/fonts/css/solid.css}" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
 <div class="outer-panel">
-    <div class="cars-panel shadow">
-        <h1>Car Manager</h1>
 
-        <button th:onclick="'javascript:rowClicked(\'/addCar\');'">Add Car</button>
+    <div class="title">
+        <h1>Car Management System <i class="fas fa-car"></i></h1>
+    </div>
+
+    <div class="btn add-car-btn" th:onclick="'javascript:rowClicked(\'addCar\');'">Add Car</div>
+
+    <div class="cars-panel shadow">
 
         <table>
             <thead>
@@ -27,12 +31,13 @@
             </thead>
 
             <tbody th:each="car: ${carList}">
-                    <tr class="content">
-                        <td th:text="${car.mark}" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '\');'"></td>
-                        <td th:text="${car.model}" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '\');'"></td>
-                        <td th:text="${car.color}" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '\');'"></td>
-                        <td class="delete" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '/delete\');'"><i class="fas fa-trash-alt"></i></td>
-                    </tr>
+            <tr class="content">
+                <td th:text="${car.mark}" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '\');'"></td>
+                <td th:text="${car.model}" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '\');'"></td>
+                <td th:text="${car.color}" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '\');'"></td>
+                <td class="delete"><i class="fas fa-trash-alt"
+                                      th:onclick="'javascript:rowClicked(\'' + ${car.id} + '/delete\');'"></i></td>
+            </tr>
             </tbody>
 
 

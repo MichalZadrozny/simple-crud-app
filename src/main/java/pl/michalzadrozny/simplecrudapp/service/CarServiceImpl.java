@@ -20,19 +20,12 @@ public class CarServiceImpl implements CarService {
     public CarServiceImpl() {
         listOfCars = new ArrayList<>();
 
-        Car maluch = new Car("Fiat", "126p", "Silver");
-        Car mustang = new Car("Ford", "Mustang", "Red");
-        Car cytrynka = new Car("Citroen", "Saxo", "Silver");
-        Car car4 = new Car("car4", "car4", "car4");
-        Car car5 = new Car("car5", "car5", "car5");
-        Car car6 = new Car("car6", "car6", "car6");
-
-        listOfCars.add(maluch);
-        listOfCars.add(mustang);
-        listOfCars.add(cytrynka);
-        listOfCars.add(car4);
-        listOfCars.add(car5);
-        listOfCars.add(car6);
+        int max = 50;
+        Car[] arr = new Car[max];
+        for(int i = 0; i <max;i++){
+            arr[i] = new Car("Car "+i,"Car "+i,"Car "+i);
+            listOfCars.add(arr[i]);
+        }
     }
 
     @Override

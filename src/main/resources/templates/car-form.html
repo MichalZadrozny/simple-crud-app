@@ -21,13 +21,14 @@
                 <div class="field"><label class="name" for="mark">Mark:</label><input id="mark" th:field="*{mark}"></div>
                 <div class="field"><label class="name" for="model">Model:</label><input id="model" th:field="*{model}"></div>
                 <div class="field"><label class="name" for="color">Color:</label><input id="color" th:field="*{color}"></div>
+                <div class="submit-info hide"><p>Fields cannot be empty</p></div>
                 <div class="buttons">
 
                     <div class="btn return-to-cars-btn" th:onclick="'javascript:goTo(\'/cars\');'">
                         <i class="fas fa-arrow-left"></i>
                     </div>
 
-                    <div class="btn return-to-cars-btn" onClick="document.querySelector('form').submit();">
+                    <div class="btn return-to-cars-btn submit-btn">
                         <p>Save</p>
                     </div>
 
@@ -38,6 +39,7 @@
 </div>
 
 <script type="text/javascript" th:src="@{/js/goTo.js}"></script>
+<script type="text/javascript" th:src="@{/js/formValidation.js}"></script>
 
 
 </body>

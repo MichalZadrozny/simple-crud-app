@@ -5,6 +5,8 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.validation.constraints.NotNull;
+
 @Slf4j
 @Getter
 @Setter
@@ -13,9 +15,13 @@ public class Car {
 
     private static long counter = 0;
 
+    @NotNull
     private final long id;
+    @NotNull
     private String mark;
+    @NotNull
     private String model;
+    @NotNull
     private String color;
 
     public Car(String mark, String model, String color) {

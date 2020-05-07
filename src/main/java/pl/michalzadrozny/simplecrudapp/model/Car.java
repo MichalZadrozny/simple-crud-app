@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 public class Car {
 
     private static long counter = 0;
+
     private final long id;
     private String mark;
     private String model;

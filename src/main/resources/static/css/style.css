@@ -14,7 +14,6 @@ body {
     background-image: linear-gradient(90deg, #134e5e, #71b280);
     height: 100vh;
     color: rgba(239, 236, 236, 0.85);
-    /*text-shadow: 1px 1px #164672;*/
     text-shadow: 1px 1px #06111d;
 }
 
@@ -35,7 +34,7 @@ body {
 
 /* EDIT-CAR */
 
-.car-form-btn{
+.return-to-cars-btn{
     width: 80px;
     margin: 0 auto;
 }
@@ -49,7 +48,7 @@ body {
     padding-bottom: 5rem;
 }
 
-.inner-edit-panel {
+.inner-panel {
     background-color: rgba(0, 0, 0, .08);
     display: flex;
     flex-direction: column;
@@ -58,7 +57,7 @@ body {
 
     min-width: 300px;
     width: auto;
-    min-height: 550px;
+    min-height: 250px;
     height: auto;
 
     border: 1px solid #042a09;
@@ -72,45 +71,42 @@ body {
     height: 25vh;
 }
 
-.inner-edit-panel form {
+.inner-panel form {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.inner-edit-panel .field {
+.inner-panel .field {
     font-size: 1.8rem;
     display: flex;
     justify-content: space-between;
     padding: 3rem;
 }
 
-.inner-edit-panel .info{
+.inner-panel .info{
     font-size: 2.2rem;
     padding: 0;
 
 }
 
-.inner-edit-panel label {
+.inner-panel label {
     margin-left: 1rem;
     margin-right: 1rem;
 }
 
-.inner-edit-panel .name{
+.inner-panel .name{
     font-weight: bold;
+    padding: 0 1rem;
 }
 
-.inner-edit-panel h1 {
+.inner-panel h1 {
     font-size: 3rem;
+    padding: 2rem;
 }
 
-.shadow {
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0 0 1rem 0 rgba(0, 0, 0, 0.75);
-}
-
-.inner-edit-panel .buttons{
+.inner-panel .buttons{
     display: flex;
     justify-content: space-around;
     padding-top: 3rem;
@@ -119,23 +115,33 @@ body {
 
 
 @media only (max-device-width: 600px) {
-    .inner-edit-panel {
+    .inner-panel {
         width: 90vw;
     }
 
-    .inner-edit-panel .field {
+    .inner-panel .field {
         font-size: 2.4rem;
         display: flex;
         justify-content: space-between;
         padding: 3rem;
     }
 
-    .inner-edit-panel h1 {
+    .inner-panel h1 {
         font-size: 4rem;
     }
 }
 
 /* CARS */
+
+.outer-panel .navigation{
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.shadow {
+    box-shadow: inset 0 0 1rem 0 rgba(0, 0, 0, 0.75);
+}
 
 .outer-panel .title{
     font-size: 2.5rem;
@@ -174,7 +180,6 @@ body {
 }
 
 .cars-panel tbody{
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.75);
     box-shadow: inset 0 0 1rem 0 rgba(0, 0, 0, 0.75);
     border-radius: 5px;
 }
@@ -217,3 +222,18 @@ body {
 
 }
 
+/* NOT FOUND */
+
+.inner-panel .return-text{
+    font-size: 2.3rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+}
+
+/* INDEX */
+
+.inner-panel .download-link{
+    text-decoration: none;
+    color: rgba(239, 236, 236, 0.85);
+    text-shadow: 1px 1px #06111d;
+}

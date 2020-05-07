@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Car Management System</title>
-    <link rel="favicon" th:href="@{/img/favicon.ico}"/>
+    <link rel="icon" th:href="@{/img/favicon.ico}"/>
     <link th:href="@{/fonts/css/fontawesome.css}" rel="stylesheet">
     <link th:href="@{/fonts/css/solid.css}" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/style.css}">
@@ -16,7 +16,11 @@
         <h1>Car Management System <i class="fas fa-car"></i></h1>
     </div>
 
-    <div class="btn add-car-btn" th:onclick="'javascript:rowClicked(\'addCar\');'">Add Car</div>
+    <div class="navigation">
+        <div class="btn add-car-btn" th:onclick="'javascript:goTo();'">Main Page</div>
+        <div class="btn add-car-btn" th:onclick="'javascript:goTo(\'/cars/addCar\');'">Add Car</div>
+    </div>
+
 
     <div class="cars-panel shadow">
 
@@ -33,11 +37,11 @@
 
             <tbody th:each="car: ${carList}">
             <tr class="content">
-                <td th:text="${car.mark}" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '\');'"></td>
-                <td th:text="${car.model}" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '\');'"></td>
-                <td th:text="${car.color}" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '\');'" ></td>
-                <td class="edit"><i class="fas fa-edit" th:onclick="'javascript:rowClicked(\'' +'edit/'+ ${car.id}  + '\');'"></i></td>
-                <td class="delete"><i class="fas fa-trash-alt" th:onclick="'javascript:rowClicked(\'' + ${car.id} + '/delete\');'"></i></td>
+                <td th:text="${car.mark}" th:onclick="'javascript:goTo(\'/cars/' + ${car.id} + '\');'"></td>
+                <td th:text="${car.model}" th:onclick="'javascript:goTo(\'/cars/' + ${car.id} + '\');'"></td>
+                <td th:text="${car.color}" th:onclick="'javascript:goTo(\'/cars/' + ${car.id} + '\');'" ></td>
+                <td class="edit"><i class="fas fa-edit" th:onclick="'javascript:goTo(\'' +'/cars/edit/'+ ${car.id}  + '\');'"></i></td>
+                <td class="delete"><i class="fas fa-trash-alt" th:onclick="'javascript:goTo(\'/cars/' + ${car.id} + '/delete\');'"></i></td>
             </tr>
             </tbody>
 
@@ -48,12 +52,7 @@
     </div>
 </div>
 
-<script th:inline="javascript">
-    function rowClicked(value) {
-        console.log(value);
-        location.href = "/cars/" + value;
-    }
-</script>
+<script type="text/javascript" th:src="@{/js/goTo.js}"></script>
 
 </body>
 </html>

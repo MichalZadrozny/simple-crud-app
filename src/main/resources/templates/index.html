@@ -13,12 +13,16 @@
 
 <div class="outer-panel">
     <div class="inner-panel shadow">
-        <h1>Element has not been found</h1>
+        <h1>Welcome to the Car Management System</h1>
 
-        <p class="return-text">You can return to the car list</p>
+        <a class="download-link" th:href="@{/download/filename.txt}" download>
+            <div class="btn">
+                <p>Download the code</p>
+            </div>
+        </a>
 
-        <div class="btn return-to-cars-btn" th:onclick="'javascript:goTo(\'/cars\');'">
-            <i class="fas fa-arrow-left"></i>
+        <div class="btn add-car-btn" th:onclick="'javascript:goTo(\'/cars\');'">
+            <p>Car list</p>
         </div>
     </div>
 </div>

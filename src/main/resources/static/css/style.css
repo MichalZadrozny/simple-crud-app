@@ -271,12 +271,13 @@ body {
 
 /* INDEX */
 
+.index-inner-panel {
+    min-height: 300px !important;
+}
+
 .inner-panel .download-link {
     text-decoration: none;
     color: rgba(239, 236, 236, 0.85);
     text-shadow: 1px 1px #06111d;
 }
 
-.index-inner-panel {
-    min-height: 300px !important;
-}

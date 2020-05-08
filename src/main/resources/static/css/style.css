@@ -32,6 +32,12 @@ body {
     width: 120px;
 }
 
+@media (max-width: 800px) {
+    .btn {
+        font-size: 1.6rem;
+    }
+}
+
 /* EDIT-CAR */
 
 .return-to-cars-btn {
@@ -132,8 +138,8 @@ body {
 
 @media (max-width: 600px) {
 
-    .inner-panel{
-        width:90vw;
+    .inner-panel {
+        width: 90vw;
     }
 
     .inner-panel .field {
@@ -187,33 +193,46 @@ body {
 
 .cars-panel th {
     font-size: 2.7rem;
-    padding-bottom: 0.5em
+    padding: 0.3em
 }
 
 .cars-panel td {
     font-size: 2.5rem;
-    padding: 0.5rem 2.8rem;
+    padding: 0;
     text-align: center;
     white-space: nowrap;
-}
-
-.cars-panel tbody {
-    box-shadow: inset 0 0 1rem 0 rgba(0, 0, 0, 0.75);
-    border-radius: 5px;
 }
 
 .cars-panel tr {
     min-width: 500px;
     width: auto;
+    box-shadow: inset 0 0 1rem 0 rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    overflow: hidden;
 }
+
 
 .cars-panel table .id {
     font-weight: bold;
 }
 
-.cars-panel .content:hover {
+.content-div {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 2.8rem;
+}
+
+.content:hover .content-div {
     background-color: rgba(255, 255, 255, .08);
     cursor: pointer;
+}
+
+.left-content-div {
+    border-radius: 10px 0 0 10px;
+}
+
+.right-content-div {
+    border-radius: 0 10px 10px 0;
 }
 
 .cars-panel .delete i:hover {
@@ -256,4 +275,8 @@ body {
     text-decoration: none;
     color: rgba(239, 236, 236, 0.85);
     text-shadow: 1px 1px #06111d;
+}
+
+.index-inner-panel {
+    min-height: 300px !important;
 }

@@ -35,16 +35,23 @@
             </tr>
             </thead>
 
-            <tbody th:each="car: ${carList}">
-            <tr class="content">
-                <td th:text="${car.mark}" th:onclick="'javascript:goTo(\'/cars/' + ${car.id} + '\');'"></td>
-                <td th:text="${car.model}" th:onclick="'javascript:goTo(\'/cars/' + ${car.id} + '\');'"></td>
-                <td th:text="${car.color}" th:onclick="'javascript:goTo(\'/cars/' + ${car.id} + '\');'" ></td>
-                <td class="edit"><i class="fas fa-edit" th:onclick="'javascript:goTo(\'' +'/cars/edit/'+ ${car.id}  + '\');'"></i></td>
-                <td class="delete"><i class="fas fa-trash-alt" th:onclick="'javascript:goTo(\'/cars/' + ${car.id} + '/delete\');'"></i></td>
+            <tr class="content"  th:each="car: ${carList}">
+                <td th:onclick="'javascript:goTo(\'/cars/' + ${car.id} + '\');'">
+                    <div class="content-div left-content-div"><p th:text="${car.mark}"></p></div>
+                </td>
+                <td th:onclick="'javascript:goTo(\'/cars/' + ${car.id} + '\');'">
+                    <div class="content-div"><p th:text="${car.model}"></p></div>
+                </td>
+                <td th:onclick="'javascript:goTo(\'/cars/' + ${car.id} + '\');'" >
+                    <div class="content-div"><p th:text="${car.color}"></p></div>
+                </td>
+                <td class="edit">
+                    <div class="content-div"><i class="fas fa-edit" th:onclick="'javascript:goTo(\'' +'/cars/edit/'+ ${car.id}  + '\');'"></i></div>
+                </td>
+                <td class="delete">
+                    <div class="content-div right-content-div"><i class="fas fa-trash-alt" th:onclick="'javascript:goTo(\'/cars/' + ${car.id} + '/delete\');'"></i></div>
+                </td>
             </tr>
-            </tbody>
-
 
         </table>
 

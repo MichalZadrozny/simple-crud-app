@@ -130,10 +130,7 @@ body {
 }
 
 
-@media only (max-device-width: 600px) {
-    .inner-panel {
-        width: 90vw;
-    }
+@media only (max-width: 600px) {
 
     .inner-panel .field {
         font-size: 2.4rem;
@@ -181,6 +178,7 @@ body {
     border-collapse: separate;
     border-spacing: 0;
     padding: 4rem;
+    width: 100%;
 }
 
 .cars-panel th {

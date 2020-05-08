@@ -5,9 +5,9 @@
     <title>Car Management System</title>
 
     <link rel="icon" th:href="@{/img/favicon.ico}"/>
-    <link th:href="@{/fonts/css/fontawesome.css}" rel="stylesheet">
-    <link th:href="@{/fonts/css/solid.css}" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link th:href="@{/fonts/css/fontawesome.css}" rel="stylesheet"/>
+    <link th:href="@{/fonts/css/solid.css}" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
 
@@ -18,9 +18,9 @@
 
         <div class="edit-fields">
             <form th:action="@{/cars/{id}/save(id=${car.getId()})}" th:object="${car}" method="post">
-                <div class="field"><label class="name" for="mark">Mark:</label><input id="mark" th:field="*{mark}"></div>
-                <div class="field"><label class="name" for="model">Model:</label><input id="model" th:field="*{model}"></div>
-                <div class="field"><label class="name" for="color">Color:</label><input id="color" th:field="*{color}"></div>
+                <div class="field"><label class="name" for="mark">Mark:</label><input id="mark" th:field="*{mark}"/></div>
+                <div class="field"><label class="name" for="model">Model:</label><input id="model" th:field="*{model}"/></div>
+                <div class="field"><label class="name" for="color">Color:</label><input id="color" th:field="*{color}"/></div>
                 <div class="submit-info hide"><p>Fields cannot be empty</p></div>
                 <div class="buttons">
 
@@ -39,7 +39,28 @@
 </div>
 
 <script type="text/javascript" th:src="@{/js/goTo.js}"></script>
-<script type="text/javascript" th:src="@{/js/formValidation.js}"></script>
+<script type="text/javascript">
+    const $mark = document.querySelector('#mark');
+    const $model = document.querySelector('#model');
+    const $color = document.querySelector('#color');
+    const $submitButton = document.querySelector('.submit-btn');
+    const $submitInfo = document.querySelector('.submit-info');
+    const $form = document.querySelector('form');
+
+    function isNotEmpty(){
+
+        if($mark.value === '' || $model.value === '' || $color.value === ''){
+            $submitInfo.classList.remove('hide');
+            console.log("Submit button clicked");
+
+        }else{
+            $form.submit();
+            $submitInfo.classList.add('hide');
+        }
+    }
+
+    $submitButton.addEventListener("click",isNotEmpty);
+</script>
 
 
 </body>

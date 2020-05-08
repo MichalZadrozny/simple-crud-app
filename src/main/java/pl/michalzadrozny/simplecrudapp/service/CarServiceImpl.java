@@ -20,7 +20,7 @@ public class CarServiceImpl implements CarService {
     public CarServiceImpl() {
         listOfCars = new ArrayList<>();
 
-        int max = 50;
+        int max = 5;
         Car[] arr = new Car[max];
         for(int i = 0; i <max;i++){
             arr[i] = new Car("Car "+i,"Car "+i,"Car "+i);

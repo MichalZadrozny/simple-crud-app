@@ -18,9 +18,12 @@
 
         <div class="edit-fields">
             <form th:action="@{/cars/{id}/save(id=${car.getId()})}" th:object="${car}" method="post">
-                <div class="field"><label class="name" for="mark">Mark:</label><input id="mark" th:field="*{mark}"/></div>
-                <div class="field"><label class="name" for="model">Model:</label><input id="model" th:field="*{model}"/></div>
-                <div class="field"><label class="name" for="color">Color:</label><input id="color" th:field="*{color}"/></div>
+                <div class="field"><label class="name" for="mark">Mark:</label><input id="mark" th:field="*{mark}"/>
+                </div>
+                <div class="field"><label class="name" for="model">Model:</label><input id="model" th:field="*{model}"/>
+                </div>
+                <div class="field"><label class="name" for="color">Color:</label><input id="color" th:field="*{color}"/>
+                </div>
                 <div class="submit-info hide"><p>Fields cannot be empty</p></div>
                 <div class="buttons">
 
@@ -47,19 +50,19 @@
     const $submitInfo = document.querySelector('.submit-info');
     const $form = document.querySelector('form');
 
-    function isNotEmpty(){
+    function isNotEmpty() {
 
-        if($mark.value === '' || $model.value === '' || $color.value === ''){
+        if ($mark.value === '' || $model.value === '' || $color.value === '') {
             $submitInfo.classList.remove('hide');
             console.log("Submit button clicked");
 
-        }else{
+        } else {
             $form.submit();
             $submitInfo.classList.add('hide');
         }
     }
 
-    $submitButton.addEventListener("click",isNotEmpty);
+    $submitButton.addEventListener("click", isNotEmpty);
 </script>
 
 

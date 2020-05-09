@@ -1,7 +1,7 @@
 function goTo(value) {
-    if(value === undefined){
+    if (value === undefined) {
         location.href = location.protocol + '//' + location.host;
-    }else {
+    } else {
         location.href = value;
     }
 }

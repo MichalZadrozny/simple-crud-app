@@ -30,6 +30,7 @@ body {
 
 .add-car-btn {
     width: 120px;
+
 }
 
 @media (max-width: 800px) {
@@ -158,7 +159,7 @@ body {
 
 .outer-panel .navigation {
     display: flex;
-    width: 40%;
+    width: 60%;
     justify-content: space-around;
 }
 
@@ -256,7 +257,6 @@ body {
 
     .cars-panel td {
         font-size: 2rem;
-        padding: 0.5rem 1.2rem;;
     }
 
 }
@@ -279,5 +279,13 @@ body {
     text-decoration: none;
     color: rgba(239, 236, 236, 0.85);
     text-shadow: 1px 1px #06111d;
+}
+
+@media (max-width: 600px) {
+    .inner-panel h1 {
+        font-size: 2.4rem;
+        text-align: center;
+    }
+
 }
 
